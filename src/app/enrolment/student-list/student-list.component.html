@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="container">
+      <div class="box">
+        <div class="row">
+          <div class="container pb-2">
+            <h3 class="text-center">hi</h3>
+            <div class="row">
+              <div class="col-8 col-md-9">
+                <h4>students</h4>
+              </div>
+              <div class="col-4 col-md-3 text-right">
+                <button [routerLink]="['student']" type="button"
+                  class="btn btn-blue btn-sm">student</button>
+              </div>
+            </div>
+          </div>
+          <div class="container mytable table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr class="text-center">
+                  <th>name</th>
+                  <th>cource</th>
+                  <th>phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                    
+                  <td>{{product.name}}</td>
+                  <td [innerHTML]="product?.cource"></td>
+                  <td class="text-center">
+                    <button (click)="editLink(product.sid)">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                    <span class="mr-2"></span>
+                    <button (click)="deleteProduct(product.sid)">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--end table-->
+          <!--start buttons-->
+          <div class="container">
+            <div class="col-md-12">
+              <div class="row d-flex justify-content-end">
+              </div>
+            </div>
+          </div>
+          <!--end buttons-->
+        </div>
+        <!--box end-->
+      </div>
+      <!--box end-->
+    </div>
+    <!--container end-->
+  </div>
+  <!--top row end-->
